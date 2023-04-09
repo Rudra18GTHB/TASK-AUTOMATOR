@@ -16,7 +16,8 @@ def operation():
 
     
 def task():
-    while True:
+    cn=True
+    while cn==True:
         a=input(print("Enter the task"))
         d=input(print("Description: "))
         cur.execute("insert into tasks values('{}','{}')".format(a,d))
@@ -24,6 +25,7 @@ def task():
         t=input(print("All task entered: "))
         if t=="y":
             priority_setting()
+            cn=False
 
 def priority_setting():
     current=dt.datetime.now()
