@@ -13,8 +13,6 @@ def operation():
     else:
         priority_setting()
 
-
-    
 def task():
     cn=True
     while cn==True:
@@ -113,7 +111,6 @@ def to_do():
     con.commit()
     print("Enjoy your day!")
     con.close()
-    
     
 con=c.connect(host="localhost",user="root",passwd="rudraxcode",database="task")
 if con.is_connected():
