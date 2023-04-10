@@ -7,7 +7,7 @@ def operation():
     1) Enter Task
     2) Show Priority
     """)
-    choice=int(input(print("ENter your choice: ")))
+    choice=int(input("Enter your choice: "))
     if choice==1:
         task()
     else:
@@ -18,8 +18,8 @@ def operation():
 def task():
     cn=True
     while cn==True:
-        a=input(print("Enter the task"))
-        d=input(print("Description: "))
+        a=input("Enter the task: ")
+        d=input("Description: ")
         cur.execute("insert into tasks values('{}','{}')".format(a,d))
         con.commit()
         t=input(print("All task entered: "))
