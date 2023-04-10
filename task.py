@@ -119,8 +119,8 @@ con=c.connect(host="localhost",user="root",passwd="rudraxcode",database="task")
 if con.is_connected():
     cur=con.cursor()
     Monday=["DBMS Lab","OS","IT Work"]
-    Tuesday=["CCS","ET","OS","Maths Lab"]
+    Tuesday=["CSS","ET","OS","Maths Lab"]
     Wednesday=["DBMS","OS","ET Lab"]
-    Thursday=["CCS","ET","C","C Lab"]
-    Friday=["DBMS","C","CCS"]
+    Thursday=["CSS","ET","C","C Lab"]
+    Friday=["DBMS","C","CSS"]
     operation()
