@@ -20,7 +20,7 @@ def task():
         d=input("Description: ")
         cur.execute("insert into tasks values('{}','{}')".format(a,d))
         con.commit()
-        t=input(print("All task entered: "))
+        t=input("All task entered: ")
         if t=="y":
             priority_setting()
             cn=False
@@ -45,7 +45,7 @@ def sunday():
     tasks=cur.fetchall()
     for i_monday in Monday:
         for j_sunday in tasks:
-            if i_monday in j_sunday[0]:
+            if i_monday == j_sunday[0]:
                 cur.execute("insert into priority values('{}')".format(j_sunday[0]))
                 con.commit()
     to_do()
@@ -55,7 +55,7 @@ def monday():
     tasks=cur.fetchall()
     for i_tuesday in Tuesday:
         for j_monday in tasks:
-            if i_tuesday in j_monday[0]:
+            if i_tuesday == j_monday[0]:
                 cur.execute("insert into priority values('{}')".format(j_monday[0]))
                 con.commit()
     to_do()
@@ -65,7 +65,7 @@ def tuesday():
     tasks=cur.fetchall()
     for i_wednesday in Wednesday:
         for j_tuesday in tasks:
-            if i_wednesday in j_tuesday[0]:
+            if i_wednesday == j_tuesday[0]:
                 cur.execute("insert into priority values('{}')".format(j_tuesday[0]))
                 con.commit()
     to_do()
@@ -75,7 +75,7 @@ def wednesday():
     tasks=cur.fetchall()
     for i_thursday in Thursday:
         for j_thursday in tasks:
-            if i_thursday in j_thursday[0]:
+            if i_thursday == j_thursday[0]:
                 cur.execute("insert into priority values('{}')".format(j_thursday[0]))
                 con.commit()
     to_do()
@@ -85,7 +85,7 @@ def thursday():
     tasks=cur.fetchall()
     for i_friday in Friday:
         for j_friday in tasks:
-            if i_friday in j_friday[0]:
+            if i_friday == j_friday[0]:
                 cur.execute("insert into priority values('{}')".format(j_friday[0]))
                 con.commit()
             else:
@@ -116,8 +116,8 @@ con=c.connect(host="localhost",user="root",passwd="rudraxcode",database="task")
 if con.is_connected():
     cur=con.cursor()
     Monday=["DBMS Lab","OS","IT Work"]
-    Tuesday=["CSS","ET","OS","Maths Lab"]
+    Tuesday=["CCS","ET","OS","Maths Lab"]
     Wednesday=["DBMS","OS","ET Lab"]
-    Thursday=["CSS","ET","C","C Lab"]
-    Friday=["DBMS","C","CSS"]
+    Thursday=["CCS","ET","C","C Lab"]
+    Friday=["DBMS","C","CCS"]
     operation()
