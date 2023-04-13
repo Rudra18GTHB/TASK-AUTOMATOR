@@ -39,6 +39,8 @@ def priority_setting():
         wednesday()
     elif string=="Thursday":
         thursday()
+    elif string=="Friday" or string=="Saturday":
+        friday_saturday()
         
 def sunday():
     cur.execute("Select * from tasks")
@@ -88,6 +90,14 @@ def thursday():
             if i_friday == j_friday[0]:
                 cur.execute("insert into priority values('{}')".format(j_friday[0]))
                 con.commit()
+    to_do()
+
+def friday_saturday():
+    cur.execute("Select * from tasks")
+    tasks=cur.fetchall()
+    for all_task in tasks:
+        cur.execute("insert into priority values('{}')".format(all_task[0]))
+        con.commit()
     to_do()
 
 def to_do():
