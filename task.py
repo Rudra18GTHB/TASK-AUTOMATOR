@@ -88,8 +88,7 @@ def thursday():
             if i_friday == j_friday[0]:
                 cur.execute("insert into priority values('{}')".format(j_friday[0]))
                 con.commit()
-            else:
-                to_do()
+    to_do()
 
 def to_do():
     cur.execute("select priority.task,description from tasks,priority where tasks.task=priority.task")
