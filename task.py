@@ -5,11 +5,14 @@ def operation():
     print("""What you want to do: 
 
     1) Enter Task
-    2) Show Priority
+    2) Priority
+    3) All Task
     """)
     choice=int(input("Enter your choice: "))
     if choice==1:
         task()
+    if choice==3:
+        friday_saturday()
     else:
         priority_setting()
 
